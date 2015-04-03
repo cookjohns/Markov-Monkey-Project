@@ -9,12 +9,19 @@ public class MarkovTest {
    File sourceFile = new File(source);
    String resultName = "MonkeyOutput";
 
+   /**
+    * Tests nextChar()
+    */
    @Test public void nextCharTest() throws FileNotFoundException {
-      //LanguageModeler langMod = new LanguageModeler(length, sourceFile);
-      //langMod.fillTable();
-      //langMod.nextChar("b,");
+      LanguageModeler langMod = new LanguageModeler(length, sourceFile);
+      langMod.fillTable();
+      langMod.nextChar("b,");
    }
    
+   /**
+    * Prints the result string after calling nextChar()
+    * on "ab" twenty times
+    */
    @Test public void probabilityTest() throws FileNotFoundException {
       LanguageModeler langMod = new LanguageModeler(length, sourceFile);
       //langMod.fillTable();
