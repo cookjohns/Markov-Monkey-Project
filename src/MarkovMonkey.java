@@ -40,7 +40,7 @@ public class MarkovMonkey {
       Collection coll = langMod.table.values();   // for debug
       String seed = langMod.randomSeed();
       String result = seed;
-   // do Markov levels here
+      // do Markov levels here
       try {
          while (result.length() < length) {
             while (!(langMod.table.containsKey(seed))) {
@@ -99,11 +99,13 @@ public class MarkovMonkey {
          writer.write(result);
       } 
       catch (IOException ex) {
-        // report
+          System.out.print("Exception caught");
       } 
       finally {
          try {writer.close();} 
-         catch (Exception ex) {}
+         catch (Exception ex) {
+             System.out.print("Exception caught");
+         }
       }
    }
 }
